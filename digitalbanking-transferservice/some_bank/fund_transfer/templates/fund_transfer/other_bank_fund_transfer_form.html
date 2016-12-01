@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<form action="{% url 'same_bank_fund_transfer_list' %}" method="post">
+<form action="{% url 'other_bank_fund_transfer_list' %}" method="post">
     {% csrf_token %} {{ form }}
     <table>
         <tr>

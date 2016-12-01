@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     'fund_transfer'
 ]
 
@@ -124,3 +125,11 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 LOGIN_REDIRECT_URL = 'same_bank_fund_transfer_list'
 LOGIN_URL = 'some_bank_login'
 LOGOUT_URL = 'some_bank_logout'
+
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}

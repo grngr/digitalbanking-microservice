@@ -50,15 +50,15 @@
 <div>
     <ul class="nav nav-pills">
         <li class="active"><a href="#">Transfer</a></li>
-        <li><a href="#" data-toggle="pill">Bill pay</a></li>
+        <li {% block bill_pay_pill %}{% endblock bill_pay_pill %}><a href="#">Bill pay</a></li>
     </ul>
 </div>
 
 <div class="container" style="width: 50%">
     <ul class="nav nav-tabs">
-        <li class="active"><a href="{% url 'same_bank_fund_transfer_list' %}">Within bank</a></li>
+        <li {% block within_bank_tab %}{% endblock within_bank_tab %}><a href="{% url 'same_bank_fund_transfer_list' %}">Within bank</a></li>
         <!--<li data-toggle="tab"><a href="{% url 'other_bank_fund_transfer_list' %}">To another bank</a></li>-->
-        <li><a href="{% url 'other_bank_fund_transfer_list' %}">To another bank</a></li>
+        <li {% block other_bank_tab %}{% endblock other_bank_tab %}><a href="{% url 'other_bank_fund_transfer_list' %}">To another bank</a></li>
     </ul>
     <h4>{% block transfer_type %}{% endblock transfer_type %}</h4>
     {% block content %}

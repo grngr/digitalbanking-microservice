@@ -19,6 +19,8 @@ from django.contrib.auth.views import login, logout
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^api-auth/', include('rest_framework.urls')),
+    # url(r'^api/', include('fund_transfer.urls')),
     url(r'^fund_transfer/', include('fund_transfer.urls')),
     url(r'^login/$', login, {'template_name': 'login.html'}, name = 'some_bank_login'),
     url(r'^logout/$', logout, {'next_page': 'some_bank_login'}, name = 'some_bank_logout'),
